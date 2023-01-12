@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
-{% block title %}Home Page{% endblock %}
+{% block title %} Chose a survey {% endblock %}
 
 {% block content %}
-<h1>{{survey.title}}</h1>
-<p>{{survey.instructions}}</p>
-<form action="/start" method="POST">
-    <button>Start</button>
+<h1>Chose a survey</h1>
+<form action="/survey" method="POST">
+    <select name="survey_code">
+        {% for survey in surveys.keys() %}
+        <option>{{survey}}</option>
+        {% endfor %}
+    </select>
+    <button>Go</button>
 </form>
-
-{% endblock%}
+{% endblock %}

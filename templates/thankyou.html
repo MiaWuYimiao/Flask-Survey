@@ -3,6 +3,15 @@
 
 
 {% block content %}
-<p>Thank you for participation!</p>
-<p>{{responses}}</p>
+<h2>Thank you for participation!</h2>
+<ul>
+    {% for response in responses %}
+    <li>
+        <b>{{questions[loop.index0].question}}</b>
+             {{response.get('answer')}}
+        <i>{{response.get('comment')}}</i>
+    </li>
+    {% endfor%}
+</ul>
+
 {% endblock %}

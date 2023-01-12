@@ -8,6 +8,11 @@
         <input type="radio" name="answer" id="{{choice}}" value="{{choice}}">
         <label for="{{choice}}">{{choice}}</label>
     {% endfor %}
+    {% if question.allow_text%}
+        <div>
+            <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+        </div>
+    {% endif %}
     <p>
         <button>Submit answer</button>
     </p>
